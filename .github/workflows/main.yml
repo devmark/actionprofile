@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       - name: Maven Build
         run: mvn install
 
       - name: Upload Artifact(WAR)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: vprofile-app
           path: target/*.war
@@ -41,7 +41,7 @@ jobs:
     needs: Build
     steps:
       - name: Code Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
         
@@ -62,7 +62,7 @@ jobs:
     needs: Build
     steps:
       - name: Code Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -77,7 +77,7 @@ jobs:
           output: 'trivy-report.json'
 
       - name: upload Security Scan artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: trivy-scan-results
           path: trivy-report.json
