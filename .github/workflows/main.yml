@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
   
   schedule:
-    - cron: "0 2 * * *"   # nightly run at 2 AM UTC
+    - cron: "0 2 * * *"   # nightly run at 2 AM UTC ,,,
 
 env:
   ECR_REPOSITORY: 'vprofile-appimage'
